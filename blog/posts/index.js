@@ -15,9 +15,10 @@ app.get('/posts', (req, res) => {
 
 app.post('/posts', (req, res) => {
     const id = randomBytes(4).toString('hex'); //THIS LINE GENERATES A RANDOM ID OF 4 BYTES IN HEXADECIMAL 
-    const  {title} = req.body; //OR const { title } = req.body;
+    const  title = req.body.title; //OR const { title } = req.body;
     posts[id] = {
-        id, title
+        id,
+        title
     };
     res.status(201).send(posts[id]);
 });
