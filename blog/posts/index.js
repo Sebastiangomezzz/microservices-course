@@ -1,11 +1,13 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const { randomBytes } = require('crypto');
+const cors = require('cors');
 
 //FOR THIS TOY PROJECT, WE WILL BE STORING LOCALLY, SO WHEN WE SHUT DOWN THE PROJECT WE WILL LOSE ALL THE DATA. 
 
 const app = express();
 app.use(bodyParser.json());//PARSES THE CONTENT OF THE BODY TO JSON FORMAT.
+app.use(cors());
 
 const posts = {};
 
@@ -25,4 +27,4 @@ app.post('/posts', (req, res) => {
 
 app.listen(4000, () => {
     console.log('listening on 4000')
-})
+});
