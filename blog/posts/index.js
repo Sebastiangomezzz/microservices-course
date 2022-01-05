@@ -9,6 +9,7 @@ const app = express();
 app.use(bodyParser.json()); //PARSES THE CONTENT OF THE BODY TO JSON FORMAT.
 app.use(cors());
 
+//CREAMOS UN OBJETO DONDE GUARDAR LOS DATOS
 const posts = {};
 
 app.get('/posts', (req, res) => {
@@ -46,5 +47,5 @@ app.post('/events', (req, res) => {
 })
 
 app.listen(4000, () => {
-  console.log('listening on 4000');
+    console.log('listening on 4000');
 });
