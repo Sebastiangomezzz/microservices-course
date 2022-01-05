@@ -11,7 +11,6 @@ const CommentList = ({ postId }) => {
 
     setComments(res.data || []);
   };
-  console.log(comments)
 
   useEffect(() => {
     fetchData();
